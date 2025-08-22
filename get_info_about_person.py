@@ -197,8 +197,11 @@ try:
 
         l = driver.find_elements(By.TAG_NAME, "td")
 
+        for j in range(len(l)):
+            print(j,l[j].text)
+
         if "о признании гражданина банкротом и введении реализации имущества гражданина" in l[7].text:
-            for i in range(len(l)):
+            for i in range(6,len(l)):
                 if l[i].text == "№ сообщения":
                     with open(f'people\\{folder_name}\\Информация.txt', 'a', encoding='utf-8') as file:
                         file.write(f'№ сообщения:{l[i+1].text}\n')  # \n для перевода на новую строку
@@ -232,6 +235,9 @@ try:
                 elif l[i].text == "Арбитражный управляющий":
                     with open(f'people\\{folder_name}\\Информация.txt', 'a', encoding='utf-8') as file:
                         file.write(f'Арбитражный управляющий:{l[i+1].text}\n')  # \n для перевода на новую строку
+                elif ("Арбитражный суд" in l[i].text) or ("АС" in l[i].text):
+                    with open(f'people\\{folder_name}\\Информация.txt', 'a', encoding='utf-8') as file:
+                        file.write(f'Арбитражный суд:{l[i].text}\n')
 
             driver.close()
             time.sleep(1)
