@@ -238,7 +238,9 @@ try:
                 elif ("Арбитражный суд" in l[i].text) or ("АС" in l[i].text):
                     with open(f'people\\{folder_name}\\Информация.txt', 'a', encoding='utf-8') as file:
                         file.write(f'Арбитражный суд:{l[i].text}\n')
-
+                elif l[i].text == "Адрес СРО АУ":
+                    with open(f'people\\{folder_name}\\Информация.txt', 'a', encoding='utf-8') as file:
+                        file.write(f'Дата решения:{l[i+4].text}\n')
             driver.close()
             time.sleep(1)
             driver.switch_to.window(windows[0])
