@@ -14,3 +14,10 @@ get_info_about_person = subprocess.run([sys.executable, "get_info_about_person.p
 
 if get_info_about_person.stderr:
     print("Ошибки:", get_info_about_person.stderr)
+
+# Запуск Python-файла
+get_kommersant = subprocess.run([sys.executable, "get_kommersant.py"],
+                       capture_output=True, text=True)
+
+if get_kommersant.stderr:
+    print("Ошибки:", get_kommersant.stderr)
