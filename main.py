@@ -21,3 +21,10 @@ get_kommersant = subprocess.run([sys.executable, "get_kommersant.py"],
 
 if get_kommersant.stderr:
     print("Ошибки:", get_kommersant.stderr)
+
+# Запуск Python-файла
+promt_to_AI_creditors = subprocess.run([sys.executable, "promt_to_AI_creditors.py"],
+                       capture_output=True, text=True)
+
+if promt_to_AI_creditors.stderr:
+    print("Ошибки:", promt_to_AI_creditors.stderr)
