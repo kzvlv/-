@@ -321,7 +321,7 @@ try:
                     if total_sum:
                         info_file_path = f'people\\{folder_name}\\Информация.txt'
                         with open(info_file_path, 'a', encoding='utf-8') as info_file:
-                            info_file.write(f'ЕФРСБ:{total_sum}\n')
+                            info_file.write(f'Сумма ЕФРСБ:{total_sum}\n')
                         print(f"✅ Итоговая сумма '{total_sum}' добавлена в файл: {info_file_path}")
                     else:
                         print("⚠️ Предупреждение: не удалось найти строку 'Сумма итого:' в тексте PDF.")

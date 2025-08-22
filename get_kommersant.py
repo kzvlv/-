@@ -75,3 +75,19 @@ for i in range(len(kom[0])):
     time.sleep(1)
     btw = driver.find_element(By.CSS_SELECTOR,"#pay_search_result > p.pay_search_bill_amount").text
     summary_kom += float(btw[btw.index(":")+2:btw.index("р")-1].replace(",",".").replace(" ",""))
+
+
+# Чтение файла
+with open(f'people\\{folder_name}\\Информация.json', 'r', encoding='utf-8') as file:
+    debtor_data = json.load(file)
+
+# Добавляем служебную информацию
+debtor_data["Номер объявления Коммерсант"] = kom[0][0]
+debtor_data["Страница"] = kom[1][0]
+debtor_data["Газета"] = kom[2][0]
+debtor_data["Дата"] = kom[3][0]
+debtor_data["Сумма Коммерсант"] = str(summary_kom)
+# Записываем обратно
+
+with open(f'people\\{folder_name}\\Информация.json', 'w', encoding='utf-8') as file:
+    json.dump(debtor_data, file, ensure_ascii=False, indent=4)
