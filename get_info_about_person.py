@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By  # подключаем опреде
 import os
 import json
 import PyPDF2
-import io
 import requests
 from datetime import datetime, timedelta
 from selenium.webdriver.chrome.options import Options
@@ -52,9 +51,9 @@ def simple_txt_to_json(input_file, output_file):
 
     return data
 
-with open('resource\\FedRes_login.txt', 'r', encoding='utf-8') as file:
+with open('autorization\\FedRes_login.txt', 'r', encoding='utf-8') as file:
     FedRes_login = file.read()
-with open('resource\\FedRes_password.txt', 'r', encoding='utf-8') as file:
+with open('autorization\\FedRes_password.txt', 'r', encoding='utf-8') as file:
     FedRes_password = file.read()
 # --- Selenium часть ---
 # Инициализация веб-драйвера
