@@ -127,7 +127,7 @@ def main():
             output_filename = analysis_folder / f"{safe_creditor_name}.json"
             with open(output_filename, "w", encoding="utf-8") as f:
                 json.dump(analysis_result, f, ensure_ascii=False, indent=4)
-            print(f"  > ✅ Результат сохранен в: {output_filename}")
+            print(f"  > ✅ Результат сохранен : {output_filename}")
 
 
 if __name__ == "__main__":
