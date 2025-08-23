@@ -36,3 +36,18 @@ promts_to_AI_property = subprocess.run([sys.executable, "promts_to_AI_property.p
 
 if promts_to_AI_property.stderr:
     print("Ошибки:", promts_to_AI_property.stderr)
+
+# Запуск Python-файла
+promt_to_AI_chancellery = subprocess.run([sys.executable, "promt_to_AI_chancellery.py"],
+                       capture_output=True, text=True)
+
+if promt_to_AI_chancellery.stderr:
+    print("Ошибки:", promt_to_AI_chancellery.stderr)
+
+
+# Запуск Python-файла
+get_minimum_cost_of_living = subprocess.run([sys.executable, "get_minimum_cost_of_living.py"],
+                       capture_output=True, text=True)
+
+if get_minimum_cost_of_living.stderr:
+    print("Ошибки:", get_minimum_cost_of_living.stderr)
