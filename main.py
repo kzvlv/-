@@ -28,3 +28,11 @@ promt_to_AI_creditors = subprocess.run([sys.executable, "promt_to_AI_creditors.p
 
 if promt_to_AI_creditors.stderr:
     print("Ошибки:", promt_to_AI_creditors.stderr)
+
+
+# Запуск Python-файла
+promts_to_AI_property = subprocess.run([sys.executable, "promts_to_AI_property.py"],
+                       capture_output=True, text=True)
+
+if promts_to_AI_property.stderr:
+    print("Ошибки:", promts_to_AI_property.stderr)
